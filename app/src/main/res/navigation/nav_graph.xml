@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.myapplication.fragments.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_notificationFragment"
+            app:destination="@id/nav_notification" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.example.myapplication.fragments.DashboardFragment"
+        tools:layout="@layout/fragment_dashboard"
+        android:label="DashboardFragment" />
+    <fragment
+        android:id="@+id/nav_notification"
+        android:name="com.example.myapplication.fragments.NotificationFragment"
+        tools:layout="@layout/fragment_notification"
+        android:label="NotificationFragment" >
+        <argument
+            android:name="sentNumber"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_help"
+        tools:layout="@layout/fragment_help"
+        android:name="com.example.myapplication.fragments.HelpFragment"
+        android:label="HelpFragment" />
+</navigation>
